@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/jpg" href="imagens/favicon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <title>PIANO</title>
+</head>
+<body onkeydown="teclasTeclado(event)">
+    <main class="chuvaDeEstrelas">
+
+    <div class="teclas">
+        <div class="teclasBrancas">
+            <button class="teclaBranca" onclick="C1Nota()"></button>
+            <button class="teclaBranca" onclick="D1Nota()"></button>
+            <button class="teclaBranca" onclick="E1Nota()"></button>
+            <button class="teclaBranca" onclick="F1Nota()"></button>
+            <button class="teclaBranca" onclick="G1Nota()"></button>
+            <button class="teclaBranca" onclick="A1Nota()"></button>
+            <button class="teclaBranca" onclick="B1Nota()"></button>
+            <button class="teclaBranca" onclick="C2Nota()"></button>
+            <button class="teclaBranca" onclick="D2Nota()"></button>
+            <button class="teclaBranca" onclick="E2Nota()"></button>
+            <button class="teclaBranca" onclick="F2Nota()"></button>
+            <button class="teclaBranca" onclick="G2Nota()"></button>
+            <button class="teclaBranca" onclick="A2Nota()"></button>
+            <button class="teclaBranca" onclick="B2Nota()"></button>
+        </div>  
+
+        <div class="teclasPretas">
+            <button class="teclaPreta" onclick="C1sNota()" style="left: 49px"></button>
+            <button class="teclaPreta" onclick="D1sNota()" style="left: calc(49px + 68px)"></button>
+            <button class="teclaPreta" onclick="F1sNota()" style="left: calc(117px + 68px*2)"></button>
+            <button class="teclaPreta" onclick="G1sNota()" style="left: 253px"></button>
+            <button class="teclaPreta" onclick="A1sNota()" style="left: 321px"></button>
+            <button class="teclaPreta" onclick="C2sNota()" style="left: 389px"></button>
+            <button class="teclaPreta" onclick="D2sNota()" style="left: 525px"></button>
+            <button class="teclaPreta" onclick="F2sNota()" style="left: 593px"></button>
+            <button class="teclaPreta" onclick="G2sNota()" style="left: 797px"></button>
+            <button class="teclaPreta" onclick="A2sNota()" style="left: 865px"></button>
+        </div>
+    </div>
+
+    <audio id="C1" controls preload="auto">
+        <source src="sons/C1.wav"> 
+    </audio>
+
+    <audio id="D1" controls preload="auto">
+        <source src="sons/D1.wav"> 
+    </audio>
+
+    <audio id="E1" controls preload="auto">
+        <source src="sons/E1.wav"> 
+    </audio>
+
+    <audio id="F1" controls preload="auto">
+        <source src="sons/F1.wav"> 
+    </audio>
+
+    <audio id="G1" controls preload="auto">
+        <source src="sons/G1.wav"> 
+    </audio>
+
+    <audio id="A1" controls preload="auto">
+        <source src="sons/A1.wav"> 
+    </audio>
+
+    <audio id="B1" controls preload="auto">
+        <source src="sons/B1.wav"> 
+    </audio>
+
+    <audio id="C2" controls preload="auto">
+        <source src="sons/C2.wav"> 
+    </audio>
+
+    <audio id="D2" controls preload="auto">
+        <source src="sons/D2.wav"> 
+    </audio>
+
+    <audio id="E2" controls preload="auto">
+        <source src="sons/E2.wav"> 
+    </audio>
+
+    <audio id="F2" controls preload="auto">
+        <source src="sons/F2.wav"> 
+    </audio>
+
+    <audio id="G2" controls preload="auto">
+        <source src="sons/G2.wav"> 
+    </audio>
+
+    <audio id="A2" controls preload="auto">
+        <source src="sons/A2.wav"> 
+    </audio>
+
+    <audio id="B2" controls preload="auto">
+        <source src="sons/B2.wav"> 
+    </audio>
+
+    <audio id="C1s" controls preload="auto">
+        <source src="sons/C1s.wav"> 
+    </audio>
+
+    <audio id="D1s" controls preload="auto">
+        <source src="sons/D1s.wav"> 
+    </audio>
+
+    <audio id="F1s" controls preload="auto">
+        <source src="sons/F1s.wav"> 
+    </audio>
+
+    <audio id="G1s" controls preload="auto">
+        <source src="sons/G1s.wav"> 
+    </audio>
+
+    <audio id="A1s" controls preload="auto">
+        <source src="sons/A1s.wav"> 
+    </audio>
+
+    <audio id="C2s" controls preload="auto">
+        <source src="sons/C2s.wav"> 
+    </audio>
+
+    <audio id="D2s" controls preload="auto">
+        <source src="sons/D2s.wav"> 
+    </audio>
+
+    <audio id="F2s" controls preload="auto">
+        <source src="sons/F2s.wav"> 
+    </audio>
+
+    <audio id="G2s" controls preload="auto">
+        <source src="sons/G2s.wav"> 
+    </audio>
+
+    <audio id="A2s" controls preload="auto">
+        <source src="sons/A2s.wav"> 
+    </audio>
+
+    <audio id="som1" controls>
+        <source src="sons/we-wish-you-a-merry-christmas-cinematic-202012.mp3" 
+        type="audio/mpeg">
+    </audio>
+
+    <audio id="som2" controls autoplay loop>
+        <source src="sons/trilha-instrumental-natal-20201128.mp3" 
+        type="audio/mpeg">
+    </audio>
+    
+    <audio id="som3" controls>
+        <source src="sons/Trilha-natal-Jingle-Bells-piano-20201201.mp3" 
+        type="audio/mpeg">
+    </audio>
+
+    <button class="btn" onclick="som1()" style="left: 50px">Som 1</button>
+    <button class="btn" onclick="som2()" style="left: 150px">Som 2</button>
+    <button class="btn" onclick="som3()" style="left: 250px">Som 3</button>
+    <button class="btn" onclick="stop()" style="left: 350px">Stop</button>
+
+    </main>
+
+<script>
+    function C1Nota() {
+        document.getElementById("C1").pause();
+        document.getElementById("C1").currentTime=0;
+        document.getElementById("C1").play();
+    }
+
+    function D1Nota() {
+        document.getElementById("D1").pause();
+        document.getElementById("D1").currentTime=0;
+        document.getElementById("D1").play();
+    }
+
+    function E1Nota() {
+        document.getElementById("E1").pause();
+        document.getElementById("E1").currentTime=0;
+        document.getElementById("E1").play();
+    }
+
+    function F1Nota() {
+        document.getElementById("F1").pause();
+        document.getElementById("F1").currentTime=0;
+        document.getElementById("F1").play();
+    }
+
+    function G1Nota() {
+        document.getElementById("G1").pause();
+        document.getElementById("G1").currentTime=0;
+        document.getElementById("G1").play();
+    }
+
+    function A1Nota() {
+        document.getElementById("A1").pause();
+        document.getElementById("A1").currentTime=0;
+        document.getElementById("A1").play();
+    }
+
+    function B1Nota() {
+        document.getElementById("B1").pause();
+        document.getElementById("B1").currentTime=0;
+        document.getElementById("B1").play();
+    }
+
+    function C2Nota() {
+        document.getElementById("C2").pause();
+        document.getElementById("C2").currentTime=0;
+        document.getElementById("C2").play();
+    }
+
+    function D2Nota() {
+        document.getElementById("D2").pause();
+        document.getElementById("D2").currentTime=0;
+        document.getElementById("D2").play();
+    }
+    
+    function E2Nota() {
+        document.getElementById("E2").pause();
+        document.getElementById("E2").currentTime=0;
+        document.getElementById("E2").play();
+    }
+
+    function F2Nota() {
+        document.getElementById("F2").pause();
+        document.getElementById("F2").currentTime=0;
+        document.getElementById("F2").play();
+    }
+
+    function G2Nota() {
+        document.getElementById("G2").pause();
+        document.getElementById("G2").currentTime=0;
+        document.getElementById("G2").play();
+    }
+
+    function A2Nota() {
+        document.getElementById("A2").pause();
+        document.getElementById("A2").currentTime=0;
+        document.getElementById("A2").play();
+    }
+
+    function B2Nota() {
+        document.getElementById("B2").pause();
+        document.getElementById("B2").currentTime=0;
+        document.getElementById("B2").play();
+    }
+
+    function C1sNota() {
+        document.getElementById("C1s").pause();
+        document.getElementById("C1s").currentTime=0;
+        document.getElementById("C1s").play();
+    }
+    
+    function D1sNota() {
+        document.getElementById("D1s").pause();
+        document.getElementById("D1s").currentTime=0;
+        document.getElementById("D1s").play();
+    }
+
+    function F1sNota() {
+        document.getElementById("F1s").pause();
+        document.getElementById("F1s").currentTime=0;
+        document.getElementById("F1s").play();
+    }
+
+    function G1sNota() {
+        document.getElementById("G1s").pause();
+        document.getElementById("G1s").currentTime=0;
+        document.getElementById("G1s").play();
+    }
+
+    function A1sNota() {
+        document.getElementById("A1s").pause();
+        document.getElementById("A1s").currentTime=0;
+        document.getElementById("A1s").play();
+    }
+
+    function C2sNota() {
+        document.getElementById("C2s").pause();
+        document.getElementById("C2s").currentTime=0;
+        document.getElementById("C2s").play();
+    }
+
+    function D2sNota() {
+        document.getElementById("D2s").pause();
+        document.getElementById("D2s").currentTime=0;
+        document.getElementById("D2s").play();
+    }
+
+    function F2sNota() {
+        document.getElementById("F2s").pause();
+        document.getElementById("F2s").currentTime=0;
+        document.getElementById("F2s").play();
+    }
+    
+    function G2sNota() {
+        document.getElementById("G2s").pause();
+        document.getElementById("G2s").currentTime=0;
+        document.getElementById("G2s").play();
+    }
+
+    function A2sNota() {
+        document.getElementById("A2s").pause();
+        document.getElementById("A2s").currentTime=0;
+        document.getElementById("A2s").play();
+    }
+    
+    function som1() {
+        document.getElementById("som1").pause();
+        document.getElementById("som1").currentTime=0;
+        document.getElementById("som1").play();
+    }
+
+    function som2() {
+        document.getElementById("som2").pause();
+        document.getElementById("som2").currentTime=0;
+        document.getElementById("som2").play();
+    }
+
+    function som3() {
+        document.getElementById("som3").pause();
+        document.getElementById("som3").currentTime=0;
+        document.getElementById("som3").play();
+    }
+
+    function stop() {
+		document.getElementById("som1").pause();
+        document.getElementById("som1").currentTime=0;
+
+        document.getElementById("som2").pause();
+        document.getElementById("som2").currentTime=0;
+
+        document.getElementById("som3").pause();
+        document.getElementById("som3").currentTime=0;
+
+    }
+
+   function teclasTeclado(event) {
+        const teclado = {
+            "Q": "C1",
+            "w": "D1",
+            "E": "E1",
+            "R": "F1",
+            "T": "G1",
+            "Y": "A1",
+            "U": "B1",
+            "Z": "C2",
+            "X": "D2",
+            "C": "E2",
+            "V": "F2",
+            "B": "G2",
+            "N": "A2",
+            "M": "B2",
+            "2": "C1s",
+            "3": "D1s",
+            "5": "F1s",
+            "6": "G1s",
+            "7": "A1s",
+            "S": "C2s",
+            "D": "D2s",
+            "G": "F2s",
+            "H": "G2s",
+            "J": "A2s"
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.repeat) return;
+            const teclaPressionada = teclado[event.key.toUpperCase()]
+
+            if (teclaPressionada) {
+
+                const tecla = document.querySelector(`[id="${teclaPressionada}"]`);
+                tecla.classList.add("clicked");
+
+                const audio = new Audio(`sons/${teclaPressionada}.wav`);
+                audio.play();
+            }
+        });
+
+        document.addEventListener("keyup", (event) => {
+            const teclaPressionada = teclado[event.key.toUpperCase()]
+            if (teclaPressionada) {
+                const tecla = document.querySelector(`[id="${teclaPressionada}"]`);
+                tecla.classList.remove("clicked");
+            }
+
+        });
+   }
+
+</script>
+
+<footer>
+    <h6>Desenvolvido por Diana Freixo &copy 2023</h6>
+</footer>
+
+</body>
+</html>
